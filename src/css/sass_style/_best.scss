@@ -1,0 +1,101 @@
+#best{
+    width: 1257px;
+    margin: 0 auto;
+    position: relative;
+    top: 823px;
+    height: 440px;
+}
+#best .best_text{
+    width: 120px;
+    margin: 0 auto 30px;
+    font-size: 20px;
+    font-weight: 700;
+}
+#best  span{
+    position: absolute;
+    top: 180px;
+    color: #d7d7d7;
+    cursor: pointer;
+    font-size: 50px;
+}
+#best  .best_left{
+    left: 0;
+}
+#best  .best_right{
+    right: 0;
+}
+#best .best_banner{
+    position: relative;
+    left: 60px;
+    width: 1160px;
+    overflow: hidden;
+    height: 385px;
+}
+#best .best_banner .best_pic{
+    position: absolute;
+    left: -10px;
+}
+#best .best_banner .best_pic ul{
+    float: left;
+}
+// #best .best_banner .best_pic ul:nth-child(2){
+//     display: none;
+// }
+#best .best_banner .best_pic ul li{
+    float: left;
+    width: 268px;
+    height: 348px;
+    border: 1px solid #dddddd;
+    margin: 0 10px;
+}
+#best .best_banner .best_pic ul li img{
+    width: auto;
+    height: auto;
+    max-width: 238px;
+    max-height: 238px;
+    vertical-align: middle;
+    margin-left: 16px;
+    margin-top: 16px;
+}
+#best .best_pic li p{
+    margin: 5px auto 10px;
+    width: 240px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+}
+#best .best_pic li div{
+    width: 200px;
+    margin: 14px auto 0;
+    font-size: 14px;
+    text-align: center;
+}
+#best .best_pic li b{
+    color: red;
+    margin-right: 6px;
+}
+#best .best_pic li i{
+    color: #c7c7c7;
+    text-decoration:line-through;
+}
+#best .best_banner ol{
+    position: absolute;
+    bottom: 15px;
+    left: 530px;
+    cursor: pointer;
+}
+#best  ol li{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #cdcdcd;
+    float: left;
+    margin-right: 5px;
+}
+#best .best_active{
+    width: 12px;
+    height: 12px;
+    border: 1px solid black;
+    background: black;
+    margin-top: -2px;
+}

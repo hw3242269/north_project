@@ -1,0 +1,13 @@
+@charset "utf-8";
+// sass --watch sass_style/.:css/. --style expanded
+// 头部
+@import "headerList";
+@import "headerNav";
+@import "headerShopList";
+// 轮播图
+@import "banner";
+// 内容
+@import "ad";
+@import "tab";
+@import "best";
+@import "footer";

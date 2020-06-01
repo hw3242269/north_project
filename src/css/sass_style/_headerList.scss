@@ -1,0 +1,192 @@
+// 全局变量
+$all_width:100%;
+$background_white:#fff;
+$middle_fontSize:14px;
+// 头部
+#header{
+    width: $all_width;
+    height: 112px;
+    position: fixed;
+    z-index: 99;
+}
+// 头部图片
+#header .title{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#header .title h1{
+    display: inline-block;
+    text-indent: -9999px;
+}
+#header .title img{
+    margin-left: -4px;
+}
+// 头部列表
+$header_list_height:40px;
+#header .header_list{
+    width: $all_width;
+    height: $header_list_height;
+    background: #222222;
+}
+// 官方商城
+#header .header_list .header_shop{
+    width: 100px;
+    height: $header_list_height;
+    background: $background_white;
+    margin-left: 96px;
+    font-size: 12px;
+    text-indent: 4px;
+    line-height: $header_list_height;
+    float: left;
+}
+// 头部列表主体内容
+#header .header_list .header_list_main  .explore a{
+    color:#fff
+}
+#header .header_list .header_list_main{
+    float: left;
+}
+// 左半
+#header .header_list .header_list_main .explore li{
+    float: left;
+    margin: 0 20px;
+    line-height: $header_list_height;
+}
+#header .header_list .header_list_main .explore li:first-child:hover a{
+    color: #d3d3d3;
+}
+#header .header_list .header_list_main .explore li span{
+    font-weight: 700;
+    color: #d92721;
+}
+#header .header_list .header_list_main .explore li i{
+    font-weight: 700;
+}
+#header .header_list .header_list_main .explore li :hover span{
+    color: #98291f;
+}
+#header .header_list .header_list_main .explore li :hover i{
+    color: #d3d3d3;
+}
+
+// 右半
+// 右半加入登录
+#header .header_list .header_list_main .header_join{
+    position: absolute;
+    right: 374px;
+    line-height: $header_list_height;
+}
+#header .header_list .header_list_main .header_join a,#header .header_list .header_list_main .cart a{
+    color:#c7c7c7
+}
+// 右半购物车ul
+#header .header_list .header_list_main .cart{
+    position: absolute;
+    right: 90px;
+    line-height: $header_list_height;
+}
+#header .header_list .header_list_main .cart li{
+    color: #c7c7c7;
+    float: left;
+    padding: 0 15px;
+    cursor: pointer;
+}
+// 门店查询
+#header .header_list .header_list_main .cart li:first-child:hover{
+    color: #6bc1ff;
+}
+#header .header_list .header_list_main .cart li:first-child:hover a{
+    color: #6bc1ff;
+}
+// 手机商城
+#header .header_list .header_list_main .cart li:nth-child(2):hover{
+    color: #ccc;
+    background: #fff;
+}
+#header .header_list .header_list_main .cart li .phone-ewm{
+    cursor: pointer;
+    color: #c7c7c7;
+    font-size: 12px;
+    line-height: 40px;
+    box-sizing: border-box;
+    background: #ffffff;
+    display: none;
+    height: 170px;
+    left: 1px;
+    margin-left: 60px;
+    position: absolute;
+    right: 0;
+    width: 170px;
+    z-index: 2;
+    height: 190px;
+}
+#header .header_list .header_list_main .cart li .phone-ewm div{
+    padding: 0 15px;
+}
+#header .header_list .header_list_main .cart li .phone-ewm div img{
+    width: 140px;
+    height: 140px;
+}
+#header .header_list .header_list_main .cart li .phone-ewm .item-1{
+    margin-top: -15px;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+}
+#header .header_list .header_list_main .cart li .phone-ewm .item-2{
+    margin-top: -5px;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+}
+    
+#header .header_list .header_list_main .cart li:nth-child(2):hover .phone-ewm{
+    display: block;
+}
+// CN
+#header .header_list .header_list_main .cart li:nth-child(3){
+    font-weight: 700;
+}
+#header .header_list .header_list_main .cart li:nth-child(3):hover{
+    color: #6bc1ff;
+    background: #fff;
+}
+#header .header_list .header_list_main .cart li a{
+    vertical-align: top;
+}
+// 购物车界面
+#header .header_list .header_list_main .header_cartshop{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #f7f7f7;
+    width: 90px;
+    height: $header_list_height;
+}
+#header .header_list .header_list_main .header_cartshop img{
+    width: 23px;
+    height: 20px;
+    position: absolute;
+    right: 38px;
+    top: 10px;
+}
+#header .header_list .header_list_main .header_cartshop div{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    line-height: 15px;
+    color: #fff;
+    background: #ff0000;
+    text-align: center;
+    position: absolute;
+    top: 4px;
+    right: 21px;
+    cursor: pointer;
+}
+// --------------------------------------------购物车
+#header .header_list .header_list_main .cartshop{
+    display: none;
+}
+// ---------------------------------------购物车

@@ -1,0 +1,74 @@
+#tab{
+    width: 1257px;
+    margin: 0 auto;
+    position: relative;
+    top: 200px;
+}
+#tab .tab_left,#tab .tab_right{
+    position: absolute;
+    top: 300px;
+    color: #d7d7d7;
+    cursor: pointer;
+}
+#tab .tab_left span,#tab .tab_right span{
+    font-size: 50px;
+}
+#tab .tab_right{
+    right: 0;
+}
+#tab .tab_text{
+    position: absolute;
+    left: 500px;
+}
+#tab .tab_text div{
+    float: left;
+    margin-right: 104px;
+    font-size: 16px;
+    padding: 6px;
+    cursor: pointer;
+}
+#tab .tab_active{
+    border-bottom: 2px solid black;
+}
+#tab .tab_pic{
+    position: absolute;
+    top: 53px;
+    left: 63px;
+}
+#tab .man_pic{
+    z-index: 2;
+}
+#tab ul li{
+    float: left;
+    margin-right: 10px;
+    position: relative;
+}
+#tab ul:nth-child(2){
+    display: none;
+}
+#tab ul li .tab_shopimg{
+    width: 275px;
+    height: 527px;
+}
+#tab ul li div{
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: .7;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    cursor: pointer;
+}
+#tab ul li:hover div{
+    display: block;
+}
+#tab ul li div img{
+    width: 50%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
