@@ -176,17 +176,21 @@ $
     })
 }(jQuery)
 
-// !function($){
-//     const $header =$(".header_cartshop")
-//     const $con=$('.cart-dialog')
-//     $header.hover(function(){
-//         $con.show()
-//     },function(){
-//         $con.hide()
-//     })
-//     $con.hover(function(){
-//         $con.show()
-//     },function(){
-//         $con.hide()
-//     })
-// }(jQuery)
+!function($){
+    const $header =$(".header_cartshop")
+    const $con=$('.cart-dialog')
+    const $btn=$('.closebtn')
+    $btn.on("click",function(){
+        $con.hide()
+    })
+    $header.hover(function(){
+        $con.show()
+    },function(){
+        $con.hide()
+    })
+    $con.hover(function(){
+        $con.show()
+    },function(){
+        $con.hide()
+    })
+}(jQuery)
