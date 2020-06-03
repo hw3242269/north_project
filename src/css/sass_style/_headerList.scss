@@ -163,6 +163,7 @@ $header_list_height:40px;
     background: #f7f7f7;
     width: 90px;
     height: $header_list_height;
+    cursor: pointer;
 }
 #header .header_list .header_list_main .header_cartshop img{
     width: 23px;
@@ -185,8 +186,3 @@ $header_list_height:40px;
     right: 21px;
     cursor: pointer;
 }
-// --------------------------------------------购物车
-#header .header_list .header_list_main .cartshop{
-    display: none;
-}
-// ---------------------------------------购物车

@@ -142,7 +142,6 @@ $
         tabSwitch()
     })
     function tabSwitch() {
-        console.log($index);
         if ($index > $pic.length) {
             $imgCon.css({
                 left: 10
@@ -176,3 +175,18 @@ $
         autoPlay()
     })
 }(jQuery)
+
+// !function($){
+//     const $header =$(".header_cartshop")
+//     const $con=$('.cart-dialog')
+//     $header.hover(function(){
+//         $con.show()
+//     },function(){
+//         $con.hide()
+//     })
+//     $con.hover(function(){
+//         $con.show()
+//     },function(){
+//         $con.hide()
+//     })
+// }(jQuery)
