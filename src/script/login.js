@@ -13,7 +13,7 @@
                 password: $password.val()
             }, function (data) {
                 if (data) {
-                    location.href = "http://10.31.162.48/north/src/index1.html"
+                    location.href = "http://10.31.162.48/north/src/index.html"
                 } else {
                     alert('您输入的用户名或者密码有误')
                     $password.val("")

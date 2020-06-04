@@ -75,13 +75,13 @@
 
     }
     function autoPlay() {
-        time = setInterval(() => {
+        $time = setInterval(() => {
             $right.click()
         }, 3500);
     }
     autoPlay()
     $banner.hover(function () {
-        clearInterval(time)
+        clearInterval($time)
     }, function () {
         autoPlay()
     })
@@ -113,84 +113,202 @@
     })
 }(jQuery)
 
-$
-// best_banner
+
+
+// 购物车
 !function ($) {
-    const $best =$('.best_banner')
-    const $imgCon = $('.best_pic')
-    const $pic = $('.best_pic ul')
-    const $btns = $('.best_banner ol li')
-    const $left = $('.best_left')
-    const $right = $('.best_right')
-    let $index = 0
-    let $time = null
-    let $pic_width = $pic.eq(0).width()
-
-    $imgCon.append($pic.eq(0).clone(true, true)).css({
-        width: ($pic.length + 1) * $pic_width
+    const $header = $(".header_cartshop")
+    const $con = $('.cart-dialog')
+    const $btn = $('.closebtn')
+    $btn.on("click", function () {
+        $con.hide()
     })
-    $btns.on("click", function () {
-        $index = $(this).index()
-        tabSwitch()
-    })
-    $left.on("click", function () {
-        $index--
-        tabSwitch()
-    })
-    $right.on("click", function () {
-        $index++
-        tabSwitch()
-    })
-    function tabSwitch() {
-        if ($index > $pic.length) {
-            $imgCon.css({
-                left: 10
-            })
-            $index = 1
-        }
-        if ($index < 0) {
-            $imgCon.css({
-                left: -$pic_width * $pic.length - 1
-            })
-            $index = 1
-        }
-        if ($index === $pic.length) {
-            $btns.eq(0).addClass('best_active').siblings("li").removeClass("best_active")
-        } else {
-            $btns.eq($index).addClass('best_active').siblings("li").removeClass("best_active")
-        }
-        $imgCon.stop(true).animate({
-            left: -$index * $pic_width - 10
-        })
-    }
-    function autoPlay(){
-        time = setInterval(() => {
-            $right.click()
-        }, 3500);
-    }
-    autoPlay()
-    $best.hover(function () {
-        clearInterval(time)
+    $header.hover(function () {
+        $con.show()
     }, function () {
-        autoPlay()
+        $con.hide()
+    })
+    $con.hover(function () {
+        $con.show()
+    }, function () {
+        $con.hide()
     })
 }(jQuery)
 
-!function($){
-    const $header =$(".header_cartshop")
-    const $con=$('.cart-dialog')
-    const $btn=$('.closebtn')
-    $btn.on("click",function(){
-        $con.hide()
+// 侧边栏右
+!function ($) {
+    const $div = $('#rightNav div')
+    const $span = $('#rightNav div span')
+
+    $div.hover(function () {
+        if($(this).index()===0){
+            $span.hide()
+        }else{
+            $span.eq($(this).index() - 1).show()
+        }
+    }, function () {
+        $span.eq($(this).index() - 1).hide()
     })
-    $header.hover(function(){
-        $con.show()
-    },function(){
-        $con.hide()
-    })
-    $con.hover(function(){
-        $con.show()
-    },function(){
-        $con.hide()
+    $div.eq(3).on("click", function () {
+        $('html,body').scrollTop({
+            scrollTop: 0
+        });
     })
 }(jQuery)
+
+// 头部通知页面隐藏
+!function ($) {
+    const $info = $('#header .info')
+
+    $(window).on('scroll', function () {
+        let $top = $(window).scrollTop()
+        if ($top > 80) $info.hide()
+        else $info.show()
+    })
+
+}(jQuery)
+
+// 最佳销售单品数据
+!function ($) {
+    let $bestPic = $('.best_pic')
+    let $a = $('.best_pic ul li a')
+    let $img = $('.best_pic ul li img')
+    let $p=$('.best_pic ul li p')
+    let $b=$('.best_pic ul li b')
+    let $i=$('.best_pic ul li i')
+    $.get("http://10.31.162.48/north/php/index_best.php",
+        function (data) {
+            let arrdata = JSON.parse(data)
+            for (let value of arrdata) {
+                $a.eq(value.sid - 1).attr("href", value.url)
+                $img.eq(value.sid - 1).attr("src", value.picurl)
+                $p.eq(value.sid - 1).text(value.title)
+                $b.eq(value.sid - 1).text(value.pirce)
+                $i.eq(value.sid - 1).text("￥"+value.pirce)
+            }
+            // best_banner轮播图
+            const $best = $('.best_banner')
+            const $imgCon = $('.best_pic')
+            const $pic = $('.best_pic ul')
+            const $btns = $('.best_banner ol li')
+            const $left = $('.best_left')
+            const $right = $('.best_right')
+            let $index = 0
+            let $time = null
+            let $pic_width = $pic.eq(0).width()
+
+            $imgCon.append($pic.eq(0).clone(true, true)).css({
+                width: ($pic.length + 1) * $pic_width
+            })
+            $btns.on("click", function () {
+                $index = $(this).index()
+                tabSwitch()
+            })
+            $left.on("click", function () {
+                $index--
+                tabSwitch()
+            })
+            $right.on("click", function () {
+                $index++
+                tabSwitch()
+            })
+            function tabSwitch() {
+                if ($index > $pic.length) {
+                    $imgCon.css({
+                        left: 10
+                    })
+                    $index = 1
+                }
+                if ($index < 0) {
+                    $imgCon.css({
+                        left: -$pic_width * $pic.length - 1
+                    })
+                    $index = 1
+                }
+                if ($index === $pic.length) {
+                    $btns.eq(0).addClass('best_active').siblings("li").removeClass("best_active")
+                } else {
+                    $btns.eq($index).addClass('best_active').siblings("li").removeClass("best_active")
+                }
+                $imgCon.stop(true).animate({
+                    left: -$index * $pic_width - 10
+                })
+            }
+            function autoPlay() {
+                $time = setInterval(() => {
+                    $right.click()
+                }, 3500);
+            }
+            autoPlay()
+            $best.hover(function () {
+                clearInterval($time)
+            }, function () {
+                autoPlay()
+            })
+        })
+
+
+}(jQuery)
+
+
+// best_banner
+// !function ($) {
+//     const $best = $('.best_banner')
+//     const $imgCon = $('.best_pic')
+//     const $pic = $('.best_pic ul')
+//     const $btns = $('.best_banner ol li')
+//     const $left = $('.best_left')
+//     const $right = $('.best_right')
+//     let $index = 0
+//     let $time = null
+//     let $pic_width = $pic.eq(0).width()
+
+//     $imgCon.append($pic.eq(0).clone(true, true)).css({
+//         width: ($pic.length + 1) * $pic_width
+//     })
+//     $btns.on("click", function () {
+//         $index = $(this).index()
+//         tabSwitch()
+//     })
+//     $left.on("click", function () {
+//         $index--
+//         tabSwitch()
+//     })
+//     $right.on("click", function () {
+//         $index++
+//         tabSwitch()
+//     })
+//     function tabSwitch() {
+//         if ($index > $pic.length) {
+//             $imgCon.css({
+//                 left: 10
+//             })
+//             $index = 1
+//         }
+//         if ($index < 0) {
+//             $imgCon.css({
+//                 left: -$pic_width * $pic.length - 1
+//             })
+//             $index = 1
+//         }
+//         if ($index === $pic.length) {
+//             $btns.eq(0).addClass('best_active').siblings("li").removeClass("best_active")
+//         } else {
+//             $btns.eq($index).addClass('best_active').siblings("li").removeClass("best_active")
+//         }
+//         $imgCon.stop(true).animate({
+//             left: -$index * $pic_width - 10
+//         })
+//     }
+//     function autoPlay() {
+//         $time = setInterval(() => {
+//             $right.click()
+//         }, 3500);
+//     }
+//     autoPlay()
+//     $best.hover(function () {
+//         clearInterval($time)
+//     }, function () {
+//         autoPlay()
+//     })
+// }(jQuery)

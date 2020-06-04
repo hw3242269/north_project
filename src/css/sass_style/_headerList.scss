@@ -186,13 +186,25 @@ $header_list_height:40px;
     right: 21px;
     cursor: pointer;
 }
-.fa-map-marker{
+#header .header_list .header_list_main .cart .fa-map-marker{
     font-size: 1.3em;
     vertical-align: middle;
     margin-right: 2px;
 }
-.fa-mobile{
+#header .header_list .header_list_main .cart .fa-mobile{
     font-size: 1.5em;
     vertical-align: middle;
     margin-right: 2px;
+}
+#header .header_list .header_shop a{
+    color: #333;
+}
+#header .header_nav .nav_list a{
+    color: #333;
+}
+#header  .header_shoplist div ul a{
+    color: #333;
+}
+#header  .header_shoplist div ul a li{
+    line-height: 16px;
 }
