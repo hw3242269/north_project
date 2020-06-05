@@ -21,10 +21,7 @@
 #main .main_right .right_header{
     border: 1px solid #d3d3d3;
 }
-#main .fa-angle:before {
-    content: "";
-}
-#main .fa-angle{
+.main_left div i{
     float: right;
     font-size: 20px;
     color: #cccccc;
@@ -87,6 +84,27 @@
     padding-left: 30px;
     font-size: 14px;
     font-weight: 700;
+}
+#main .choice p{
+    float: left;
+}
+#main .choice ul{
+    float: left;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+#main .choice ul li{
+    line-height: normal;
+    float: left;
+    margin: 0px 7px;
+    background: black;
+    color: white;
+    padding: 0 3px;
+}
+#main .choice ul li a{
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
 }
 #main .main_right .right_header .right_header_list p{
     width: 95px;
@@ -247,6 +265,9 @@
     line-height: 18px;
     font-size: 14px;
     font-weight: 500;
+}
+#main .main_right .main_shoplist ul li a h4:hover{
+    text-decoration: underline;
 }
 #main .main_right .main_shoplist ul li a p{
     width: 100%;

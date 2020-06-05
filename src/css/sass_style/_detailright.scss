@@ -1,0 +1,145 @@
+.detail_right{
+    width: 541px;
+    float: right;
+    margin-top: 30px;
+    overflow: hidden;
+}
+.detail_right h3{
+    width: 510px;
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+.detail_right h5{
+    color: #8c8c8c;
+    font-size: 16px;
+    font-weight: 500;
+}
+.detail_left_price{
+    margin-top: 24px;
+    box-sizing: border-box;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #dddddd;
+}
+.detail_left_price div{
+    width: 100%;
+    background: #f8f8f8;
+    padding-left: 25px;
+}
+.detail_left_price .detail_left_top_price{
+    height: 75px;
+    line-height: 75px;
+}
+.detail_left_price .detail_left_top_price span{
+    display: block;
+    margin-left: 5px;
+    font-size: 24px;
+    color: #e52d1d;
+}
+.detail_left_price .detail_left_bottom_price{
+    height: 55px;
+    line-height: 55px;
+    box-sizing: border-box;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    color: #858585;
+    font-size: 15px;
+}
+.detail_left_price .detail_left_bottom_price span{
+    margin-right: 5px;
+    float: left;
+    height: 100%;
+}
+.detail_left_price .detail_left_bottom_price i{
+    text-decoration: line-through;
+    float: left;
+    height: 100%;
+}
+.detail_left_price div:last-child{
+    height:60px;
+    line-height: 60px;
+}
+.detail_left_price div:last-child img{
+    margin-top: 16px;
+    float: left;
+}
+.detail_left_price div:last-child a{
+    margin-top: 12px;
+    font-size: 15px;
+    color: #858585;
+    margin-top: -1px;
+    margin-left: 8px;
+    float: left;
+}
+.detail_left_price div:last-child a:hover{
+    color: #6bc1ff;
+}
+.detail_left_collect{
+    width: 100%;
+    margin-top: 20px;
+}
+.detail_left_collect div:first-child{
+    width: 118px;
+    height: 28px;
+    box-sizing: border-box;
+    border: 1px solid #dddddd;
+    background-color: #f5f5f5;
+    color: #767676;
+    font-size: 12px;
+    line-height: 26px;
+    float: left;
+    margin: 5px 0;
+    text-align: center;
+    cursor: pointer;
+}
+.detail_left_collect div:nth-child(2){
+    float: right;
+    cursor: pointer;
+}
+.detail_right_data{
+    width: 100%;
+    margin-top: 85px;
+}
+.detail_right_color p{
+    margin: 12px 0;
+    color: #c4c4c4;
+    margin-right: 5px;
+}
+.detail_right_color p span{
+    color: red;
+}
+.detail_right_data .detail_right_color div{
+    width: 70px;
+    height: 70px;
+    box-sizing: border-box;
+    border: 2px solid red;
+}
+.detail_right_color div img{
+    width: 100%;
+    height: 100%;
+}
+.detail_right_size{
+    margin: 24px 0;
+}
+.detail_right_size p{
+    margin: 12px 0;
+    color: #c4c4c4;
+    margin-right: 5px;
+}
+.detail_right_size p span{
+    color: red;
+}
+.detail_right_size div{
+    width: 70px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #dddddd;
+    font-size: 14px;
+    color: #767676;
+    text-align: center;
+    line-height: 38px;
+    margin-right: 10px;
+    float: left;
+}
+.detail_right_size .detail_right_size_active{
+    border: 2px solid red;
+}

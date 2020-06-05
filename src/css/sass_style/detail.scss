@@ -1,0 +1,13 @@
+@charset "utf-8";
+// sass --watch sass_style/.:css/. --style expanded
+// 头部
+@import "headerList";
+@import "headerNav";
+@import "headerShopList";
+@import "headerShopcart";
+// 内容
+@import "detailLeft";
+@import "detailright";
+// 底部和侧边栏
+@import "footer";
+@import "rightNav";

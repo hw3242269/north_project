@@ -1,0 +1,74 @@
+// 整体
+#detail{
+    width: 1191px;
+    margin: 0 auto;
+    position: relative;
+    top: 160px;
+    overflow: hidden;
+}
+// 左半
+.detail_left{
+    float: left;
+    width: 602px;
+}
+// 顶部文字
+.detail_left h6{
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 24px;
+}
+// 图片容器
+.detail_left .small_con{
+    width: 600px;
+    height: 600px;
+    border: 1px solid #dddddd;
+}
+.detail_left .small_con img{
+    width: 100px;
+    height: 100px;
+}
+// 图片列表
+.detail_left_list{
+    width: 100%;
+    margin-top: 13px;
+    position: relative;
+    height: 100px;
+}
+.detail_left_list .detail_left_list_leftbtn,.detail_left_list .detail_left_list_rightbtn{
+    position: absolute;
+    top: 0;
+    background: #f6f6f6;
+    border-radius: 6px;
+    height: 100%;
+    width: 16px;
+    cursor: pointer;
+}
+.detail_left_list .detail_left_list_leftbtn{
+    left: 0;
+}
+.detail_left_list .detail_left_list_rightbtn{
+    right: 0;
+}
+.detail_left_list ul{
+    position: absolute;
+    left: 25px;
+    top: 0;
+}
+.detail_left_list ul li{
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    margin: 0 5px;
+    float: left;
+}
+.detail_left_list ul li:hover{
+    border: 2px solid #ff6600;
+}
+.detail_left_list ul li img{
+    padding: 6px;
+    width: 88px;
+    height: 88px;
+}
