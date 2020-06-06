@@ -1,0 +1,9 @@
+@charset "utf-8";
+// sass --watch sass_style/.:css/. --style expanded
+// 头部
+
+// 内容
+@import "cartMain";
+// 底部和侧边栏
+@import "footer";
+@import "rightNav";

@@ -1,10 +1,17 @@
 // 整体
 #detail{
-    width: 1191px;
+    width: 1204px;
     margin: 0 auto;
     position: relative;
     top: 160px;
-    overflow: hidden;
+    clear: both;
+}
+#detail:after{
+    display: block;
+    content: '.';
+    clear: both;
+    line-height: 0;
+    visibility: hidden;
 }
 // 左半
 .detail_left{
@@ -23,10 +30,40 @@
     width: 600px;
     height: 600px;
     border: 1px solid #dddddd;
+    position: relative;
+    cursor: pointer;
 }
 .detail_left .small_con img{
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
+}
+.detail_left .small_con_move{
+    cursor: pointer;
+    position: absolute;
+    background: yellow;
+    opacity: .4;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+.big_con{
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    top: 24px;
+    left: 603px;
+    border: 1px solid #dddddd;
+    z-index: 8;
+    overflow: hidden;
+    background: white;
+    visibility: hidden;
+}
+.big_con img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 150%;
 }
 // 图片列表
 .detail_left_list{

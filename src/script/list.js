@@ -101,6 +101,7 @@
 
 // 后端获取数据
 !function($){
+    let $a=$('.main_shoplist ul li a')
     let $img=$('.main_shoplist ul li a div img')
     let $text=$('.main_shoplist h4')
     let $pirce=$('.main_shoplist p')
@@ -111,6 +112,7 @@
         let arrdata=JSON.parse(data)
         console.log(arrdata);
         for(let value of arrdata){
+            $a.eq(value.sid-1).attr("href","http://10.31.162.48/north/src/detail.html?sid="+value.sid)
             $img.eq(value.sid-1).attr("src",value.picurl)
             $text.eq(value.sid-1).text(value.title)
             $pirce.eq(value.sid-1).text("￥"+value.pirce)
@@ -118,5 +120,8 @@
         }
     })
 }(jQuery)
+
+
+
 
 // 排序，分页未做
