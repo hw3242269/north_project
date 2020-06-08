@@ -78,6 +78,7 @@
   margin-top: 20px;
   border: 1px solid #efefef;
   box-sizing: border-box;
+  display: none;
 }
 
 .cart_main_shop .cart_main_shop_title {
@@ -127,9 +128,9 @@
 
 .cart_main_shop .cart_main_shop_page {
   width: 100%;
-  height: 96px;
   background: #fff;
-  border-bottom: #efefef;
+  border-bottom: 1px solid #efefef;
+  height: 124px;
 }
 
 .cart_main_shop .cart_main_shop_page form {
@@ -160,6 +161,197 @@
 .cart_main_shop .cart_main_shop_page div:nth-of-type(1) img {
   width: 100%;
   height: 100%;
+}
+
+.cart_main_shop .cart_main_shop_page div:nth-of-type(2) {
+  width: 220px;
+  height: 100%;
+  margin-top: 15px;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.cart_main_shop .cart_main_shop_page div:nth-of-type(2) p {
+  width: 100%;
+  color: #767676;
+  line-height: 27px;
+  margin-bottom: 10px;
+}
+
+.cart_main_shop .cart_main_shop_page div:nth-of-type(2) span {
+  color: #666666;
+  background-color: #efefef;
+  padding: 4px 6px;
+}
+
+.cart_main_shop .cart_main_shop_page div:nth-of-type(3) {
+  width: 220px;
+  text-align: center;
+  line-height: 110px;
+  font-size: 14px;
+  color: #767676;
+}
+
+.cart_main_shop .cart_main_shop_page div:nth-of-type(4) {
+  width: 100px;
+  margin-left: 30px;
+  overflow: hidden;
+}
+
+.cart_main_shop .cart_main_shop_page div:nth-of-type(4) div {
+  width: 70px;
+  height: 22px;
+  color: #666666;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cart_main_shop .cart_main_shop_page div:nth-of-type(4) div span {
+  display: inline-block;
+  float: left;
+  width: 20px;
+  height: 100%;
+  box-sizing: border-box;
+  line-height: 24px;
+}
+
+.cart_main_shop .cart_main_shop_page div:nth-of-type(4) div .cart_main_shop_page_add {
+  border-right: 1px solid #a9a9a9;
+}
+
+.cart_main_shop .cart_main_shop_page div:nth-of-type(4) div .cart_main_shop_page_minus {
+  border-left: 1px solid #a9a9a9;
+}
+
+.cart_main_shop .cart_main_shop_page div:nth-of-type(4) div input {
+  float: left;
+  width: 30px;
+  height: 100%;
+  border: none;
+  text-align: center;
+  line-height: 100%;
+}
+
+.cart_main_shop .cart_main_shop_page div:nth-of-type(5) {
+  width: 200px;
+  text-align: center;
+  line-height: 100px;
+}
+
+.cart_main_shop .cart_main_shop_page div:nth-of-type(5) span {
+  font-size: 14px;
+  color: #fe2000;
+}
+
+.cart_main_shop .cart_main_shop_page div:nth-of-type(6) {
+  width: 180px;
+  text-align: center;
+  line-height: 100px;
+  color: #666666;
+}
+
+.cart_main_shop .cart_main_shop_page div:nth-of-type(6) a {
+  color: #026eb7;
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.cart_main_shop .cart_main_shop_num {
+  width: 100%;
+  height: 168px;
+  padding: 20px 45px 18px 0;
+  box-sizing: border-box;
+}
+
+.cart_main_shop .cart_main_shop_num div:nth-of-type(1) {
+  float: right;
+}
+
+.cart_main_shop_num_price {
+  margin-right: 46px;
+}
+
+.cart_main_shop_num span {
+  color: #8c8c8c;
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 25px;
+}
+
+.cart_main_shop_num i {
+  color: #fe2000;
+  font-size: 16px;
+}
+
+.cart_main_shop_num_total {
+  margin: 30px 35px 35px 0;
+}
+
+.cart_main_shop_num_total i {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.cart_main_shop_num_bottom {
+  position: absolute;
+  margin-left: -105px;
+}
+
+.cart_main_shop_num_bottom div {
+  float: left;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  box-sizing: border-box;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cart_main_shop_num_bottom div:nth-of-type(1) {
+  color: white;
+  background: red;
+  margin-left: 15px;
+}
+
+.cart_main_shop_num_bottom div:nth-of-type(2) {
+  border: 1px solid #dddddd;
+  color: #767676;
+}
+
+.cart_main_noshop {
+  width: 100%;
+  height: 300px;
+  font-size: 14px;
+  position: relative;
+}
+
+.cart_main_noshop div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cart_main_noshop p {
+  color: #666666;
+  margin-bottom: 25px;
+}
+
+.cart_main_noshop div span {
+  margin-left: 20px;
+  display: inline-block;
+  width: 160px;
+  height: 24px;
+  border: 1px solid #efefef;
+  font-weight: 700;
+  text-align: center;
+  line-height: 24px;
+}
+
+html #footer {
+  top: 0;
 }
 
 #footer {

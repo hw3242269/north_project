@@ -1,6 +1,8 @@
 
 // banner
 !function ($) {
+
+
     const $banner = $('#banner')
     const $imgCon = $('.banner_imgCon')
     const $img = $('.banner_imgCon a')
@@ -94,35 +96,80 @@
 
 // 最佳销售单品数据
 !function ($) {
-    let $bestPic = $('.best_pic')
-    let $a = $('.best_pic ul li a')
-    let $img = $('.best_pic ul li img')
-    let $p=$('.best_pic ul li p')
-    let $b=$('.best_pic ul li b')
-    let $i=$('.best_pic ul li i')
+    const $ul1 = $(".best_pic").children("ul").first()
+    const $ul2 = $(".best_pic").children("ul").eq(1)
+    const $ul3 = $(".best_pic").children("ul").last()
     $.get("http://10.31.162.48/north/php/index_best.php",
         function (data) {
             let arrdata = JSON.parse(data)
+            let $str = ''
+            let $str1 = ''
             for (let value of arrdata) {
-                $a.eq(value.sid - 1).attr("href", value.url)
-                $img.eq(value.sid - 1).attr("src", value.picurl)
-                $p.eq(value.sid - 1).text(value.title)
-                $b.eq(value.sid - 1).text(value.pirce)
-                $i.eq(value.sid - 1).text("￥"+value.pirce)
+                if (value.sid < 5) {
+                    $str += `
+                    <li>
+                        <a href="">
+                            <img class="lazy" data-original="${value.picurl}" width="238" height="238"/>
+                            <p>${value.title}</p>
+                            <div>
+                                <b>${value.pirce}</b>
+                                <i>￥${value.pirce}</i>
+                            </div>
+                        </a>
+                    </li>
+                    `
+                } else {
+                    $str1 += `
+                    <li>
+                        <a href="">
+                            <img class="lazy" data-original="${value.picurl}" width="238" height="238"/>
+                            <p>${value.title}</p>
+                            <div>
+                                <b>${value.pirce}</b>
+                                <i>￥${value.pirce}</i>
+                            </div>
+                        </a>
+                    </li>
+                    `
+                }
+
+
+
+                // $a.eq(value.sid - 1).attr("href", value.url)
+                // $img.eq(value.sid - 1).attr("data-original", value.picurl).css({
+                //     width:238,
+                //     height:238
+                // })
+                // $p.eq(value.sid - 1).text(value.title)
+                // $b.eq(value.sid - 1).text(value.pirce)
+                // $i.eq(value.sid - 1).text("￥"+value.pirce)
             }
+            $ul1.html($str)
+            $ul2.html($str1)
+            $("img.lazy").lazyload({
+                effect: "fadeIn"
+            });
             // best_banner轮播图
+
             const $best = $('.best_banner')
             const $imgCon = $('.best_pic')
             const $pic = $('.best_pic ul')
-            const $btns = $('.best_banner ol li')
+            const $btns = $('#best ol li')
             const $left = $('.best_left')
             const $right = $('.best_right')
             let $index = 0
             let $time = null
             let $pic_width = $pic.eq(0).width()
+            let $clone=$pic.eq(0).clone(true, true)
+            let $src=$clone.children().children().children("img")
 
-            $imgCon.append($pic.eq(0).clone(true, true)).css({
+            $imgCon.append($clone).css({
                 width: ($pic.length + 1) * $pic_width
+            })
+            $src.eq(2).attr("src",$src.eq(2).attr("data-original"))
+            $pic.children("li").each(function(i){
+                $src.eq(i).attr("src",$src.eq(i).attr("data-original"))
+                if(i>3) return
             })
             $btns.on("click", function () {
                 $index = $(this).index()
@@ -170,7 +217,6 @@
                 autoPlay()
             })
         })
-
 
 }(jQuery)
 
