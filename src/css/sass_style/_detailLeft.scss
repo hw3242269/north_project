@@ -71,6 +71,7 @@
     margin-top: 13px;
     position: relative;
     height: 100px;
+    overflow: hidden;
 }
 .detail_left_list .detail_left_list_leftbtn,.detail_left_list .detail_left_list_rightbtn{
     position: absolute;
@@ -80,6 +81,8 @@
     height: 100%;
     width: 16px;
     cursor: pointer;
+    padding-top: 40px;
+    box-sizing: border-box;
 }
 .detail_left_list .detail_left_list_leftbtn{
     left: 0;
@@ -87,10 +90,18 @@
 .detail_left_list .detail_left_list_rightbtn{
     right: 0;
 }
-.detail_left_list ul{
+.detail_left_list .detail_left_list_leftbtn span{
+    display: none
+}
+.detail_left_list_ulCon{
+    overflow: hidden;
     position: absolute;
     left: 25px;
     top: 0;
+    height: 100%;
+}
+.detail_left_list_ulCon ul{
+    position: absolute;
 }
 .detail_left_list ul li{
     width: 100px;
@@ -108,4 +119,15 @@
     padding: 6px;
     width: 88px;
     height: 88px;
+}
+#bg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background: black;
+    opacity: .3;
+    display: none;
 }

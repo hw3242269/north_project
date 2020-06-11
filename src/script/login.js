@@ -1,10 +1,10 @@
 !function ($) {
-    const $form=$('form input')
+    const $form = $('form input')
     const $username = $('.username')
     const $password = $('.password')
     const $btn = $('.login')
-    // let $bool = false
-    let $decide = $('.decide span')
+    const $decide = $('.decide span')
+
 
     $btn.on("click", function () {
         if ($username.val() !== "" && $password.val() !== "") {
@@ -15,20 +15,26 @@
                 if (data) {
                     location.href = "http://10.31.162.48/north/src/index.html"
                 } else {
-                    alert('您输入的用户名或者密码有误')
-                    $password.val("")
-                    $form.get(0).focus()
+                    $('.hint').show()
+                    $('.cover').show()
+                    $('.hint span').on("click", function () {
+                        $('.hint').hide()
+                        $('.cover').hide()
+                        $password.val("")
+                        $form.get(0).focus()
+                    })
+
                 }
             })
         }
-        if($username.val()===""){
+        if ($username.val() === "") {
             $decide.eq(0).show()
-        }else{
+        } else {
             $decide.eq(0).hide()
         }
-        if($password.val()===""){
+        if ($password.val() === "") {
             $decide.eq(1).show()
-        }else{
+        } else {
             $decide.eq(1).hide()
         }
     })

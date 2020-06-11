@@ -381,7 +381,7 @@
   background-size: 100%;
 }
 
-.cart-dialog .cartlist {
+.listbox .car-hidden {
   display: none;
 }
 
@@ -461,6 +461,7 @@
 .cart-d {
   padding: 25px;
   box-sizing: border-box;
+  display: none;
 }
 
 .d-all .allcount {
@@ -577,6 +578,7 @@
   margin-top: 13px;
   position: relative;
   height: 100px;
+  overflow: hidden;
 }
 
 .detail_left_list .detail_left_list_leftbtn, .detail_left_list .detail_left_list_rightbtn {
@@ -587,6 +589,8 @@
   height: 100%;
   width: 16px;
   cursor: pointer;
+  padding-top: 40px;
+  box-sizing: border-box;
 }
 
 .detail_left_list .detail_left_list_leftbtn {
@@ -597,10 +601,20 @@
   right: 0;
 }
 
-.detail_left_list ul {
+.detail_left_list .detail_left_list_leftbtn span {
+  display: none;
+}
+
+.detail_left_list_ulCon {
+  overflow: hidden;
   position: absolute;
   left: 25px;
   top: 0;
+  height: 100%;
+}
+
+.detail_left_list_ulCon ul {
+  position: absolute;
 }
 
 .detail_left_list ul li {
@@ -621,6 +635,18 @@
   padding: 6px;
   width: 88px;
   height: 88px;
+}
+
+#bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background: black;
+  opacity: .3;
+  display: none;
 }
 
 .detail_right {

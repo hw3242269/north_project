@@ -381,7 +381,7 @@
   background-size: 100%;
 }
 
-.cart-dialog .cartlist {
+.listbox .car-hidden {
   display: none;
 }
 
@@ -461,6 +461,7 @@
 .cart-d {
   padding: 25px;
   box-sizing: border-box;
+  display: none;
 }
 
 .d-all .allcount {

@@ -25,7 +25,7 @@
     font-size: 12px;
     background-size: 100%;
 }
-.cart-dialog .cartlist{
+.listbox .car-hidden{
     display: none;
 }
 .cart-dialog .car-ware{
@@ -92,6 +92,7 @@
 .cart-d{
     padding: 25px;
     box-sizing: border-box;
+    display: none;
 }
 .d-all .allcount{
     float: left;

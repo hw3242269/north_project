@@ -45,7 +45,7 @@ gulp.task('uglifyhtml', () => {
 
 // 4.压缩css文件 - 引入插件包
 gulp.task('uglifycss', () => {
-    return gulp.src('src/css/*.css')
+    return gulp.src('src/css/css/*.css')
         .pipe(css()) //执行css插件包
         .pipe(gulp.dest('dist/css'));
 });

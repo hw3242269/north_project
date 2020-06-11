@@ -26,21 +26,6 @@
             }
             $bool = !$bool
         }
-
-        // if($bool){
-        //     if (e.target.nodeName === "P" || e.target.nodeName === "I"){
-        //         $(e.target.parentElement.parentElement).children("li").hide();
-        //     }else if(e.target.nodeName === "DIV"){
-        //         $(e.target.parentElement).children("li").hide()
-        //     }
-        // }else{
-        //     if (e.target.nodeName === "P" || e.target.nodeName === "I"){
-        //         $(e.target.parentElement.parentElement).children("li").show();
-        //     }else if(e.target.nodeName === "DIV"){
-        //         $(e.target.parentElement).children("li").show()
-        //     }
-        // }
-        // $bool=!$bool    
     })
 }(jQuery)
 
@@ -74,36 +59,58 @@
     const $list = $('.right_header_list ul li')
     const $a = $('.right_header_list ul li a')
     const $ul = $('.right_header .choice ul')
+    const $header = $('.right_header')
 
-    $list.on("click", function (e) {
-        if (e.target.nodeName === "A") return
-        if ($(this).index() === 0) {
-            $(this).siblings("li").children("a").css("opacity", 0)
-            $(this).addClass("right_header_active").siblings("li").removeClass("right_header_active")
-        } else {
-            $(e.target).addClass("right_header_active").parent().children().first("li").removeClass("right_header_active")
-            $(e.target).children("a").css("opacity", 1)
-            $ul.append($(e.target).clone())
+    $header.on("click", "div", function (e) {
+        // console.log($(".choice ul li"));
+        if (e.target.nodeName === "LI") {
+            let $index1 = $(this).index()
+            let $index2 = $(e.target).index()
+            let $data = $index1 + "_" + $index2
+            if ($(e.target).index() === 0) {
+                $(e.target).siblings("li").children("a").css("opacity", 0)
+                $(e.target).addClass("right_header_active").siblings("li").removeClass("right_header_active")
+            } else {
+                $(e.target).addClass("right_header_active").parent().children().first("li").removeClass("right_header_active")
+                $(e.target).attr("data", $data)
+                $(e.target).children("a").css("opacity", 1)
+                $ul.append($(e.target).clone())
+            }
+            // $(e.target).children("a").css("opacity", 1).parent().siblings("li").children("a").css("opacity", 0)
+            $('.choice ul').children("li").children("a").on("click", function (e) {
+                console.log(1);
+                $(e.target).parent().remove("li")
+                $.each($list, function (index, value) {
+                    if ($(value).attr("data") === $(this).attr("data")) {
+                        $(value).children("a").css("opacity", 0).parent().removeClass("right_header_active")
+                        $(value).children("a").parent().parent().children().first("li").addClass("right_header_active")
+                    }
+                })
+            })
         }
-        // $(e.target).children("a").css("opacity", 1).parent().siblings("li").children("a").css("opacity", 0)
-        let $top_a=$('.choice ul').children().children("a")
-        $top_a.on("click",function(e){
-            console.log(1);
-            $(e.target).parent().remove("li")
-        })
+
     })
     $a.on("click", function (e) {
-        $(e.target).parent().removeClass("right_header_active")
-        $(e.target).css("opacity", 0)
-        $(e.target).parent().parent().children().first("li").addClass("right_header_active")
+        let $remove = $(e.target)
+        $remove.parent().removeClass("right_header_active")
+        $remove.css("opacity", 0)
+        $remove.parent().parent().children().first("li").addClass("right_header_active")
+        $.each($(".choice ul li"), function (index, value) {
+            if ($(value).attr("data") === $remove.parent("li").attr("data")) {
+                $(value).remove()
+            }
+        })
+    })
+    $(".filter u").on("click", function () {
+        window.location.href = "http://10.31.162.48/north/src/list.html"
     })
 }(jQuery)
 
 
 // 后端获取数据
 !function ($) {
-    let array_default = [];//排序前的li数组
-    let array = [];//排序中的数组
+    let array_default = [];
+    let array = [];
     let prev = null;
     let next = null;
 
@@ -146,22 +153,20 @@
             $(".lazy").lazyload({
                 effect: "fadeIn"
             });
-            array_default = [];//排序前的li数组
-            array = [];//排序中的数组
+            array_default = [];
+            array = [];
             prev = null;
             next = null;
-            //将页面的li元素加载到两个数组中
             $('.main_shoplist').children("ul").children("li").each(function (index, element) {
                 array[index] = $(this);
                 array_default[index] = $(this);
             });
         })
-    //2.分页思路
-    //告知后端当前请求的是第几页数据。将当前的页面页码传递给后端(get和page)
+    //2.分页
     $('.page').pagination({
-        pageCount: 3,//总的页数
-        jump: true,//是否开启跳转到指定的页数，布尔值。
-        coping: true,//是否开启首页和尾页，布尔值。
+        pageCount: 3,
+        jump: true,
+        coping: true,
         prevContent: '上一页',
         nextContent: '下一页',
         homePage: '首页',
@@ -205,12 +210,12 @@
                     effect: "fadeIn"
                 });
 
-                array_default = [];//排序前的li数组
-                array = [];//排序中的数组
+                array_default = [];
+                array = [];
                 prev = null;
                 next = null;
 
-                //将页面的li元素加载到两个数组中
+                
                 $('.main_shoplist').children("ul").children("li").each(function (index, element) {
                     array[index] = $(this);
                     array_default[index] = $(this);
@@ -220,19 +225,19 @@
     });
 
 
-    const $btns=$(".main_choiseBtn").children().not("select")
-    const $select=$(".main_choiseBtn select option")
+    const $btns = $(".main_choiseBtn").children().not("select")
+    const $select = $(".main_choiseBtn select option")
 
-    
+
     $btns.eq(0).on('click', function () {
-        $select.eq(0).attr("selected",true).siblings("option").attr("selected",false)
+        $select.eq(0).attr("selected", true).siblings("option").attr("selected", false)
         $.each(array_default, function (index, value) {
             $('.main_shoplist .main_shoplist_ul').append(value);
         });
         return;
     });
     $btns.eq(1).on('click', function () {
-        $select.eq(1).attr("selected",true).siblings("option").attr("selected",false)
+        $select.eq(1).attr("selected", true).siblings("option").attr("selected", false)
         for (let i = 0; i < array.length - 1; i++) {
             for (let j = 0; j < array.length - i - 1; j++) {
                 // console.log(array[j].find('.price').html());
@@ -251,7 +256,7 @@
         });
     });
     $btns.eq(2).on('click', function () {
-        $select.eq(2).attr("selected",true).siblings("option").attr("selected",false)
+        $select.eq(2).attr("selected", true).siblings("option").attr("selected", false)
         for (let i = 0; i < array.length - 1; i++) {
             for (let j = 0; j < array.length - i - 1; j++) {
                 // console.log(array[j].find('.price').html());

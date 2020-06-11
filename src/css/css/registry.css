@@ -30,31 +30,31 @@ main .bg{
     position: relative;
 }
 main .decide{
-    width: 200px;
+    width: 400px;
     position: absolute;
-    left: 1410px;
-    top: 165px;
-    font-size: 20px;
+    left: 1064px;
+    top: 200px;
+    font-size: 12px;
+    z-index: 9;
 }
 main .decide span{
+    box-sizing: border-box;
+    /* background: #ccc; */
     position: absolute;
-    display: block;
+    text-align: center;
 }
 main .decide span:nth-child(2){
+    left: 0;
     color: red;
-    top: 58px;
-    display: none;
+    top: 56px;
 }
 main .decide span:nth-child(3){
     color: red;
-    top: 110px;
-    display: none;
+    top: 112px;
 }
 main .decide span:nth-child(4){
     color: red;
-    font-size: 12px;
-    top: 165px;
-    display: none;
+    top: 150px;
 }
 main .registry{
     width: 400px;

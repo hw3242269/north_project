@@ -7,13 +7,14 @@
     <meta name="keywords" content="购物车__TheNorthFace官方商城" />
     <meta name="description" content="购物车__TheNorthFace官方商城" />
     <meta name="referrer" content="never">
-    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/css/common.css">
     <link rel="stylesheet" href="css/css/cart.css">
     <link rel="stylesheet" href="fonts/iconfont.css">
     <link href="https://img2.thenorthface.com.cn/themes/tnf/images/font-awesome.css" rel="stylesheet">
 </head>
 
 <body>
+    <!-- 头部 -->
     <div id="header">
         <div class="header_left">
             <a href="http://10.31.162.48/north/src/index.html">
@@ -26,6 +27,7 @@
             <a href="http://10.31.162.48/north/src/registry.html">/注册</a>
         </div>
     </div>
+    <!-- 内容 -->
     <div id="cart_main">
         <div class="cart_main_header">
             <div class="cart_main_header_active">
@@ -59,48 +61,49 @@
                 <div>小计</div>
                 <div>操作</div>
             </div>
-            <div class="cart_main_shop_page">
+            <div class="cart_main_shop_page cart_shop_hideen">
+                <span class="cart_shop_hint"></span>
                 <form action="">
                     <input type="checkbox">
                 </form>
-                <div>
+                <div class="cart_shop_img">
                     <img src="" alt="">
                 </div>
-                <div>
+                <div class="cart_shop_text">
                     <p>TheNorthFace北面短袖T恤女户外吸湿排汗上新|4N9J</p>
                     <span>粉色 L</span>
                 </div>
-                <div>
+                <div class="cart_shop_pirce">
                     <span>￥298.00</span>
                 </div>
-                <div>
+                <div class="cart_shop_num">
                     <div>
-                        <span class="cart_main_shop_page_add">+</span>
-                        <input type="text" value="1">
                         <span class="cart_main_shop_page_minus">-</span>
+                        <input type="text" value="1">
+                        <span class="cart_main_shop_page_add">+</span>
                     </div>
                 </div>
-                <div>
-                    <span>￥298.00</span>
+                <div class="cart_shop_total">
+                    <span>298.00</span>
                 </div>
-                <div>
-                    <a href="">收藏</a>|
-                    <a href="">移除</a>
+                <div class="cart_shop_remove">
+                    <a href="javascript:;">收藏</a>|
+                    <a href="javascript:;" class="cart_shop_remove_remove">移除</a>
                 </div>
             </div>
             <div class="cart_main_shop_num">
-                <div>
+                <div class="cart_main_shop_num_con">
                     <div class="cart_main_shop_num_price">
                         <span>商品金额:</span>
-                        <i>￥298.00</i>
+                        <i>￥0.00</i>
                     </div>
                     <div class="cart_main_shop_num_total">
                         <span>商品总计:</span>
-                        <i>￥298.00</i>
+                        <i>￥0.00</i>
                     </div>
                     <div class="cart_main_shop_num_bottom">
-                        <div>下单结算</div>
                         <div>继续购物</div>
+                        <div>下单结算</div>
                     </div>
                 </div>
             </div>
@@ -158,7 +161,9 @@
 
 
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-    <script src="script/common.js"></script>
+    <!-- <script src="script/common.js"></script> -->
+    <script src="thirdplugins/jquery.cookie.js"></script>
+    <script src="script/cart.js"></script>
 </body>
 
 </html>

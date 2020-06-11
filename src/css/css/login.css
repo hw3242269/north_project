@@ -43,7 +43,7 @@ main .decide{
     width: 200px;
     position: absolute;
     top: 145px;
-    font-size: 20px;
+    font-size: 12px;
 }
 main .decide span{
     position: absolute;
@@ -111,6 +111,53 @@ main .bg .registry .text{
 main .bg .registry .text a{
     margin-right: 36px;
 }
+main .bg .hint{
+    position: absolute;
+    width: 350px;
+    height: 150px;
+    background: #000000;
+    color: #707070;
+    font-size: 14px;
+    text-align: center;
+    top: 230px;
+    left: 600px;
+    z-index: 19;
+    display: none;
+}
+main .bg .hint div{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    color: white;
+    background: #ccc;
+}
+main .bg .hint p{
+    line-height: 80px;
+}
+main .bg .hint span{
+    border: 1px solid #333333;
+    padding: 5px;
+    box-sizing: border-box;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    color: white;
+    background: #666666;
+    cursor: pointer;
+}
+.cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    opacity: .2;
+    background: #000000;
+    display: none;
+}
+
+
+
 /* 底部 */
 footer{
     width: 100%;

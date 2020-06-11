@@ -131,6 +131,7 @@
   background: #fff;
   border-bottom: 1px solid #efefef;
   height: 124px;
+  overflow: hidden;
 }
 
 .cart_main_shop .cart_main_shop_page form {
@@ -214,14 +215,30 @@
   height: 100%;
   box-sizing: border-box;
   line-height: 24px;
+  cursor: pointer;
 }
 
 .cart_main_shop .cart_main_shop_page div:nth-of-type(4) div .cart_main_shop_page_add {
-  border-right: 1px solid #a9a9a9;
+  border-left: 1px solid #a9a9a9;
 }
 
 .cart_main_shop .cart_main_shop_page div:nth-of-type(4) div .cart_main_shop_page_minus {
-  border-left: 1px solid #a9a9a9;
+  border-right: 1px solid #a9a9a9;
+}
+
+.cart_main_shop .cart_main_shop_page .cart_shop_hint {
+  display: block;
+  top: 136px;
+  left: 1000px;
+  position: absolute;
+  width: 130px;
+  border: 3px solid #febf0f;
+  box-sizing: border-box;
+  color: #666666;
+  padding: 10px 5px 20px 20px;
+  z-index: 3;
+  background: white;
+  opacity: 0;
 }
 
 .cart_main_shop .cart_main_shop_page div:nth-of-type(4) div input {
@@ -264,7 +281,7 @@
   box-sizing: border-box;
 }
 
-.cart_main_shop .cart_main_shop_num div:nth-of-type(1) {
+.cart_main_shop .cart_main_shop_num .cart_main_shop_num_con {
   float: right;
 }
 
@@ -285,7 +302,8 @@
 }
 
 .cart_main_shop_num_total {
-  margin: 30px 35px 35px 0;
+  margin: 20px 0 25px 0;
+  overflow: hidden;
 }
 
 .cart_main_shop_num_total i {
@@ -294,7 +312,6 @@
 }
 
 .cart_main_shop_num_bottom {
-  position: absolute;
   margin-left: -105px;
 }
 
@@ -309,13 +326,13 @@
   cursor: pointer;
 }
 
-.cart_main_shop_num_bottom div:nth-of-type(1) {
+.cart_main_shop_num_bottom div:nth-of-type(2) {
   color: white;
   background: red;
   margin-left: 15px;
 }
 
-.cart_main_shop_num_bottom div:nth-of-type(2) {
+.cart_main_shop_num_bottom div:nth-of-type(1) {
   border: 1px solid #dddddd;
   color: #767676;
 }
@@ -348,10 +365,23 @@
   font-weight: 700;
   text-align: center;
   line-height: 24px;
+  cursor: pointer;
 }
 
 html #footer {
   top: 0;
+}
+
+#cart_main .cart_main_noshop {
+  display: block;
+}
+
+#cart_main .cart_main_shop {
+  display: none;
+}
+
+#cart_main .cart_shop_hideen {
+  display: none;
 }
 
 #footer {
