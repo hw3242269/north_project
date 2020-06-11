@@ -112,13 +112,13 @@
             $num = 1
             $('.cart_shop_hint').css("opacity", 1).text("此商品的最小购买数量为一件")
             if (bool) {
-                bool=false
+                bool = false
                 $time = setInterval(() => {
                     $('.cart_shop_hint').animate({
                         opacity: 0,
                     })
                     clearInterval($time)
-                    bool=true
+                    bool = true
                 }, 3000);
             }
         }
@@ -137,13 +137,13 @@
             $num = 99
             $('.cart_shop_hint').css("opacity", 1).text("此商品的最大购买数量为99件")
             if (bool) {
-                bool=false
+                bool = false
                 $time = setInterval(() => {
                     $('.cart_shop_hint').animate({
                         opacity: 0,
                     })
                     clearInterval($time)
-                    bool=true
+                    bool = true
                 }, 3000);
             }
         }
@@ -162,13 +162,13 @@
                 $value = 1
                 $('.cart_shop_hint').css("opacity", 1).text("此商品的最小购买数量为一件")
                 if (bool) {
-                    bool=false
+                    bool = false
                     $time = setInterval(() => {
                         $('.cart_shop_hint').animate({
                             opacity: 0,
                         })
                         clearInterval($time)
-                        bool=true
+                        bool = true
                     }, 3000);
                 }
             }
@@ -179,13 +179,13 @@
                 $value = 99
                 $('.cart_shop_hint').css("opacity", 1).text("此商品的最大购买数量为99件")
                 if (bool) {
-                    bool=false
+                    bool = false
                     $time = setInterval(() => {
                         $('.cart_shop_hint').animate({
                             opacity: 0,
                         })
                         clearInterval($time)
-                        bool=true
+                        bool = true
                     }, 3000);
                 }
             }
@@ -214,7 +214,12 @@
             $(this).parents('.cart_shop_show').remove()
             delCookie($(this).parents('.cart_shop_show').find('img').attr('sid'), arrsid)
             total()
+            if (!$.cookie('cookiesid') || !$.cookie('cookienum')) {
+                $('#cart_main .cart_main_noshop').show()
+                $('#cart_main .cart_main_shop').hide()
+            }
         }
+
     })
 
 }(jQuery)

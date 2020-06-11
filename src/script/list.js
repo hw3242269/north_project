@@ -6,25 +6,17 @@
     const $arrow = $('.main_left ul div i')
     let $bool = true
 
-    $con.on("click", function (e) {
-        e.preventDefault()
-        e.stopPropagation();
+    $btn.attr("block","show")
+    $con.on("click","div",function(e){
         if (e.target.nodeName === "LI") return
-        if (e.target.nodeName === "P" || e.target.nodeName === "I" || e.target.nodeName === "DIV") {
-            if ($bool && (e.target.nodeName === "P" || e.target.nodeName === "I")) {
-                $arrow.eq($(this).index()).addClass('fa-angle-up').removeClass('fa-angle-down')
-                $(e.target.parentElement).siblings('li').hide()
-            } else if (!$bool && (e.target.nodeName === "P" || e.target.nodeName === "I")) {
-                $arrow.eq($(this).index()).addClass('fa-angle-down').removeClass('fa-angle-up')
-                $(e.target.parentElement).siblings('li').show()
-            } else if (e.target.nodeName === "DIV" && $bool) {
-                $arrow.eq($(this).index()).addClass('fa-angle-up').removeClass('fa-angle-down')
-                $(e.target).siblings('li').hide()
-            } else if (e.target.nodeName === "DIV" && !$bool) {
-                $arrow.eq($(this).index()).addClass('fa-angle-down').removeClass('fa-angle-up')
-                $(e.target).siblings('li').show()
-            }
-            $bool = !$bool
+        if($(this).attr("block") === "show"){
+            $(this).parent("ul").children("li").hide()
+            $(this).attr("block","hide")
+            $(this).children("i").addClass('fa-angle-up').removeClass('fa-angle-down')
+        }else if($(this).attr("block") === "hide"){
+            $(this).parent("ul").children("li").show()
+            $(this).attr("block","show")
+            $(this).children("i").addClass('fa-angle-down').removeClass('fa-angle-up')
         }
     })
 }(jQuery)
@@ -60,9 +52,11 @@
     const $a = $('.right_header_list ul li a')
     const $ul = $('.right_header .choice ul')
     const $header = $('.right_header')
+    let $bool=true
+    $list.attr("repetitive","true")
 
     $header.on("click", "div", function (e) {
-        // console.log($(".choice ul li"));
+        if(e.target.className === "choice" || e.target.parentElement.parentElement.className === "choice") return
         if (e.target.nodeName === "LI") {
             let $index1 = $(this).index()
             let $index2 = $(e.target).index()
@@ -74,16 +68,22 @@
                 $(e.target).addClass("right_header_active").parent().children().first("li").removeClass("right_header_active")
                 $(e.target).attr("data", $data)
                 $(e.target).children("a").css("opacity", 1)
-                $ul.append($(e.target).clone())
+                if($(e.target).attr("repetitive")==="true"){
+                    if(e.target.className === "choice" || e.target.parentElement.parentElement.className === "choice") return
+                    $ul.append($(e.target).clone())
+                    $(e.target).attr("repetitive","false")
+                }
             }
-            // $(e.target).children("a").css("opacity", 1).parent().siblings("li").children("a").css("opacity", 0)
             $('.choice ul').children("li").children("a").on("click", function (e) {
-                console.log(1);
+                if(e.target.nodeName === "LI") return
                 $(e.target).parent().remove("li")
                 $.each($list, function (index, value) {
-                    if ($(value).attr("data") === $(this).attr("data")) {
-                        $(value).children("a").css("opacity", 0).parent().removeClass("right_header_active")
-                        $(value).children("a").parent().parent().children().first("li").addClass("right_header_active")
+                    if ($(value).attr("data") === $(e.target).parent().attr("data")) {
+                        $(value).attr("repetitive","true").removeClass("right_header_active")
+                        $(value).children("a").css("opacity", 0)
+                        if($(value).siblings("li[class='right_header_active']").size()===0){
+                           $(value).children("a").parent().parent().children().first("li").addClass("right_header_active") 
+                        }
                     }
                 })
             })
@@ -91,10 +91,14 @@
 
     })
     $a.on("click", function (e) {
+        if(e.target.nodeName === "LI") return
         let $remove = $(e.target)
-        $remove.parent().removeClass("right_header_active")
+        $remove.parent().removeClass("right_header_active").attr("repetitive","true")
         $remove.css("opacity", 0)
-        $remove.parent().parent().children().first("li").addClass("right_header_active")
+        // $.each($(this).parent(".right_header_list ul li"))
+        if($(this).parent("li").siblings("li[class='right_header_active']").size()===0){
+            $remove.parent().parent().children().first("li").addClass("right_header_active")
+        }
         $.each($(".choice ul li"), function (index, value) {
             if ($(value).attr("data") === $remove.parent("li").attr("data")) {
                 $(value).remove()
