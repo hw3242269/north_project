@@ -1,7 +1,4 @@
-html,body{
-    width: 100vw;
-    height: 100vh;
-}
+
 /* 头部 */
 header{
     width: 100%;
@@ -23,16 +20,17 @@ main{
     margin-top: 28px;
 }
 main .bg{
-    width: 1600px;
+    width: 84%;
     height: 504px;
     margin: 0 auto;
     background: url(https://img1.thenorthface.com.cn/themes/tnf/images/reg.jpg),no-repeat;
     position: relative;
+    background-size:cover
 }
 main .decide{
     width: 400px;
     position: absolute;
-    left: 1064px;
+    left: 60%;
     top: 200px;
     font-size: 12px;
     z-index: 9;

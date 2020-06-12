@@ -502,7 +502,7 @@
 }
 
 #banner {
-  width: 1903px;
+  width: 100%;
   height: 595px;
   position: relative;
   top: 112px;
@@ -524,7 +524,7 @@
 }
 
 #banner .banner_imgCon img {
-  width: 1903px;
+  width: 100%;
   height: 100%;
   font-size: 0;
 }
@@ -803,6 +803,11 @@
   position: relative;
   top: 820px;
   left: 0;
+}
+
+#footer img {
+  width: 100%;
+  height: 100%;
 }
 
 #rightNav {

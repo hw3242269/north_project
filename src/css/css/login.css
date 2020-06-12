@@ -1,7 +1,4 @@
-html,body{
-    width: 100vw;
-    height: 100vh;
-}
+
 /* 头部 */
 header{
     width: 100%;
@@ -23,18 +20,19 @@ main{
     margin-top: 28px;
 }
 main .bg{
-    width: 1600px;
+    width: 84%;
     height: 504px;
     margin: 0 auto;
     background: url(https://img1.thenorthface.com.cn/themes/tnf/images/reg.jpg),no-repeat;
     position: relative;
+    background-size:cover
 }
 main .registry{
     width: 400px;
     height: 438px;
     background: #ffffff;
     position: absolute;
-    left: 1000px;
+    left: 60%;
     top: 58px;
     padding: 40px 60px 10px ;
     box-sizing: border-box;
